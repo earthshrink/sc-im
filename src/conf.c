@@ -100,6 +100,12 @@ void store_default_config_values() {
     put(user_conf_d, "default_paste_from_clipboard_cmd", "");
     #endif
 
+    #ifdef DEFAULT_OPEN_FILE_UNDER_CURSOR_CMD
+    put(user_conf_d, "default_open_file_under_cursor_cmd", DEFAULT_OPEN_FILE_UNDER_CURSOR_CMD);
+    #else
+    put(user_conf_d, "default_open_file_under_cursor_cmd", "");
+    #endif
+
     // Calculate GMT offset (not on Solaris, doesn't have tm_gmtoff)
     #if defined(USELOCALE) && !defined(__sun)
     time_t t = time(NULL);
@@ -110,7 +116,6 @@ void store_default_config_values() {
     #else
     put(user_conf_d, "tm_gmtoff", "0");
     #endif
-
 }
 
 /**
