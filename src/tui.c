@@ -112,7 +112,7 @@ srange * ranges;
  */
 
 void ui_start_screen() {
-    sstderr = newterm(NULL, stderr, stdin);
+    //sstderr = newterm(NULL, stderr, stdin);
     noecho();
     sstdout = newterm(NULL, stdout, stdin);
     set_term(sstdout);
